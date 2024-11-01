@@ -4,6 +4,11 @@ const navEL = document.getElementById("sidebar");
 navEL.addEventListener("click", function (e) {
   this.classList.toggle("active");
 });
+navEL.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", function (e) {
+    e.stopPropagation();
+  });
+});
 const data1 = {
   id: "P001",
   name: "tom",
